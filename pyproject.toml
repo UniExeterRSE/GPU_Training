@@ -2,7 +2,7 @@
 name = "GPU Training Course"
 version = "0.1.0"
 description = "A training course to explain the use of GPUs"
-authors = ["Liam Berrisford <l.berrisford3@exeter.ac.uk>"]
+authors = ["Liam Berrisford <l.berrisford3@exeter.ac.uk>", "Stephen Cook <S.Cook4@exeter.ac.uk>"]
 readme = "README.md"
 packages = [{include = "content"}]
 
