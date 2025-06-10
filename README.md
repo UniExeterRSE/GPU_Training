@@ -91,22 +91,14 @@ Please keep in mind that nearly all of the commands used in this section will be
 If you are self-studying, then please read up to the section "Project: Conway's Game of Life - CPU vs GPU Implementation" to understand more about the commands that are being used. If you are taking the workshop, then these commands are here to make sure that you are able to run code on the designated platform to save time in the workshop and identify any permission errors when accessing the needed resources.
 ```
 
-## Clone the Repo
-
-To engage with all of the content within this GPU Training course, you will need to clone the repo, which can be done with
-
-``` bash
-git clone https://github.com/UniExeterRSE/GPU_Training.git
-```
-
 ## Spack - Installing system-level requirements
 
 Within this course, [Spack](https://spack.io/) is being used to manage system-level requirements, such as drivers. The reason for this is that a lot of system-level requirements generally require privileged permissions, such as access to `sudo`. However, as a lot of the platforms that have GPUs available are HPC platforms, `spack` allows us to install drivers that normally would require privileged access. There are also a range of other benefits to the use of `spack` that will be discussed in this course.
 
-First, you will need to clone the `spack` repo:
+First, you will need to clone the `spack` repo in your user home directory at a recent stable version (extra config and depth flags suggested in spack's readme):
 
 ``` bash
-git clone https://github.com/spack/spack.git
+git clone -c feature.manyFiles=true --depth=2 -b v0.23.1 https://github.com/spack/spack.git
 ```
 
 You will then need to activate `spack` with:
@@ -146,6 +138,10 @@ Finally, we are able to install all of the packages into our `spack` environment
 
 ```bash
 spack install
+```
+
+```{note}
+On an HPC environment, we would want to put the above spack commands into a shell script and run this with the scheduler, such as `sbatch` for ISCA/Archer2.  The `install` can take on the order of hours for the above specifications.
 ```
 
 ```{note}
@@ -189,6 +185,10 @@ If you are working on an HPC cluster via SLURM, submit the `cuda_check.slurm` sc
 ## Data
 
 ### Data Download
+
+```{note}
+For the RSA Team Day the data files are available on the shared ISCA file-system.
+```
 
 To download the dataset, follow these steps:
 
@@ -253,6 +253,8 @@ This guide walks you through setting up and using **Remote-SSH** in Visual Studi
 
 ##### Install the Remote - SSH Extension
 
+Install from [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) or via the following steps:
+
 1. Open **VSCode**.
 2. Go to the **Extensions** view by clicking on the square icon in the sidebar or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac).
 3. Search for "**Remote - SSH**" and install the extension from Microsoft.
@@ -278,7 +280,7 @@ Ensure you can SSH into the remote machine from your terminal. If SSH is not alr
 
 5. Add a new SSH configuration to the file, specifying the remote machine’s details. Here’s an example configuration:
 
-   ```none
+   ```ssh-config
    Host my-remote-machine
        HostName <remote-ip-or-hostname>
        User <your-username>
@@ -295,6 +297,8 @@ You should now be able to connect to the remote machine from within VSCode but u
 As this course produces 3D outputs, some supporting code will generate interactive HTML dashboards to make exploring the output data easier. The VSCode Live Server extension makes the process of viewing these dashboards with your local web browser easier.
 
 ##### Install the Live Server Extension
+
+Install from [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or via the following steps:
 
 1. Open **VSCode**.
 2. Go to the **Extensions** view by clicking on the square icon in the sidebar or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac).
