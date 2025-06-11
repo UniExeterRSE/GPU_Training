@@ -229,6 +229,8 @@ This guide walks you through setting up and using **Remote-SSH** in Visual Studi
 
 ##### Install the Remote - SSH Extension
 
+Install from [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) or via the following steps:
+
 1. Open **VSCode**.
 2. Go to the **Extensions** view by clicking on the square icon in the sidebar or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac).
 3. Search for "**Remote - SSH**" and install the extension from Microsoft.
@@ -254,7 +256,7 @@ Ensure you can SSH into the remote machine from your terminal. If SSH is not alr
 
 5. Add a new SSH configuration to the file, specifying the remote machine’s details. Here’s an example configuration:
 
-   ``` 
+   ```ssh-config
    Host my-remote-machine
        HostName <remote-ip-or-hostname>
        User <your-username>
@@ -272,6 +274,8 @@ You should now be able to connect to the remote machine from within VSCode but u
 As this course produces 3D outputs, some supporting code will generate interactive HTML dashboards to make exploring the output data easier. The VSCode Live Server extension makes the process of viewing these dashboards with your local web browser easier. 
 
 ##### Install the Live Server Extension
+
+Install from [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or via the following steps:
 
 1. Open **VSCode**.
 2. Go to the **Extensions** view by clicking on the square icon in the sidebar or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac).
