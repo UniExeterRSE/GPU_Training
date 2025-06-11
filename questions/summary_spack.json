@@ -118,7 +118,7 @@
                 "feedback": "Incorrect"
             },
             {
-                "answer": "Activates the environment with a package view (-p), making its packages visible in your shell",
+                "answer": "Activates the environment making its packages visible in your shell, and modifies the prompt",
                 "correct": true,
                 "feedback": "Correct"
             },
